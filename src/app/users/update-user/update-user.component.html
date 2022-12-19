@@ -1,1 +1,56 @@
-<p>update-user works!</p>
+<div style="display: flex; justify-content: center; margin-top: 200px;">
+
+    <form *ngIf="user" #f="ngForm" (ngSubmit)="ifSubmit(f)" >
+      <div class="mb-3">
+        <label class="form-label">Genre : </label>
+        <select class="form-select" aria-label="Default select example" name="gender" ngModel>
+          <option selected disabled>Choisissez</option>
+          <option value="Male">Masculin</option>
+          <option value="Female">Feminin</option>
+          <option value="Orthers">Autres</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="name" class="form-label">Prénom : </label>
+        <input type="text" class="form-control" name="name" placeholder="{{ user.username }}" ngModel>
+      </div>
+      <div class="mb-3">
+        <label for="fullname" class="form-label">Nom : </label>
+        <input type="text" class="form-control" name="fullname" placeholder="{{ user.fullname }}" ngModel>
+      </div>
+      <div class="mb-3">
+        <label for="adresse" class="form-label">Adresse : </label>
+        <input type="text" class="form-control" name="adresse" placeholder="{{ user.userAdress }}" ngModel>
+      </div>
+      <div class="mb-3">
+        <label for="contact" class="form-label">Contact : </label>
+        <input type="text" class="form-control" name="contact" placeholder="{{ user.usercontact }}" ngModel>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email : </label>
+        <input type="email" class="form-control" name="email" placeholder="{{ user.email }}" ngModel>
+      </div>
+      <div class="mb-3">
+        <label for="dateNais" class="form-label">Date de Naissance : </label>
+        <input type="date" class="form-control" name="dateNais" placeholder="{{ user.dateOfBirth | date }}" ngModel>
+      </div>
+      <fieldset style="border: none;" name="roles" ngModel >
+        <legend>Roles :</legend>
+        <div>
+          <input type="checkbox" id="user" name="user" utilisateur  >
+          <label for="user">Utilisateur </label>
+        
+          <input type="checkbox" id="admin" name="admin" admin>
+          <label for="admin">Administrateur </label>
+        
+          <input type="checkbox" id="collab" name="collab" collab >
+          <label for="collab">Collaborateur </label>
+        </div>
+    </fieldset>
+    <input type="hidden" class="form-control" name="createdAt" ngModel>
+    <input type="hidden" class="form-control" name="userId" ngModel>
+      <button class="btn btn-success" type="submit" [hidden]="f.invalid">Envoyer</button>
+    </form>
+  
+  </div>
+

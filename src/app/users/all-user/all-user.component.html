@@ -14,18 +14,22 @@
             <th  > Date d'enregistrement </th>
             <th  > Adresse </th>
             <th  > Roles </th>
+            <th  > suppression </th>
+            <th  > edition </th>
         </tr>
         <tr *ngFor="let user of users" >
             <td  > {{ user.userId }} </td>
-            <td  > Gender </td>
-            <td   > UserName </td>
-            <td  > FullName </td>
-            <td   > Contact </td>
-            <td  > Email </td>
-            <td  > Date Of Birth </td>
-            <td  > Date d'enregistrement </td>
-            <td  > Adresse </td>
-            <td > Roles </td >
+            <td  > {{ user.gender }} </td>
+            <td   > {{ user.username }} </td>
+            <td  > {{ user.fullname }} </td>
+            <td  > {{ user.usercontact }} </td>
+            <td  > {{ user.email }} </td>
+            <td  > {{ user.dateOfBirth | date }} </td>
+            <td  > {{ user.createdAt | date }} </td>
+            <td  > {{ user.userAdress }} </td>
+            <td > {{ user.roles }} </td >
+            <td  > <button (click)="editUser(user)"> Editer </button> </td>
+            <td  > <button (click)="deleteUser(user)"> Supprimer </button> </td>
         </tr>
     </table>
 </section>

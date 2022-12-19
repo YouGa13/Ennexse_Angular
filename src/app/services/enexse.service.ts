@@ -63,4 +63,13 @@ export class EnexseService {
     )
   }
 
+
+  // Récuperation d'un utilisateur par son identifiant
+  recupUserByUserId(userId: string): Observable<User>{
+    return this.http.get<User>(`http://[::1]:3000/users/${userId}`).pipe(
+      tap((response: any) => this.log(response)),
+      catchError( (error: Error) => this.recupCatchError(error, []))
+    )
+  };
+
 }
