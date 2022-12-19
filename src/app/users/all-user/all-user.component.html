@@ -1,0 +1,31 @@
+
+<section>
+    <h2 class="title">Liste de tous les services</h2>
+
+    <table  class="mat-elevation-z8">
+        <tr  >
+            <th  > UserId </th>
+            <th  > Gender </th>
+            <th  > UserName </th>
+            <th  > FullName </th>
+            <th  > Contact </th>
+            <th  > Email </th>
+            <th  > Date Of Birth </th>
+            <th  > Date d'enregistrement </th>
+            <th  > Adresse </th>
+            <th  > Roles </th>
+        </tr>
+        <tr *ngFor="let user of users" >
+            <td  > {{ user.userId }} </td>
+            <td  > Gender </td>
+            <td   > UserName </td>
+            <td  > FullName </td>
+            <td   > Contact </td>
+            <td  > Email </td>
+            <td  > Date Of Birth </td>
+            <td  > Date d'enregistrement </td>
+            <td  > Adresse </td>
+            <td > Roles </td >
+        </tr>
+    </table>
+</section>
